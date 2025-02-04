@@ -2,8 +2,16 @@
 
 {% block content %}
 
-<h1>Welcome to Dawg Nation HQ!</h1>
-<br>
-<img src="{{ url_for('static', filename='assets/dawgs.jpg') }}" alt="Georgia Dawgs" width="300">
+<div class="text-center">
+    <h1 class="text-danger font-weight-bold">Welcome to Dawg Nation HQ! 🏈🐶</h1>
+    <p class="text-dark">Your ultimate home for everything <strong>Georgia Bulldogs</strong> – from game updates to recruiting news, history, and fan discussions.</p>
+
+    <img src="{{ url_for('static', filename='assets/dawgs.jpg') }}" alt="Georgia Dawgs" class="img-fluid rounded shadow mt-3" width="600">
+
+    <h2 class="text-danger mt-4">Latest Bulldogs News</h2>
+    <p class="text-dark">Stay up to date with the latest <strong>game results, player highlights, and team rankings</strong>. Check back often for updates!</p>
+
+    <a href="{{ url_for('about') }}" class="btn btn-danger btn-lg mt-3">Learn More</a>
+</div>
 
 {% endblock %}
