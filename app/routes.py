@@ -9,3 +9,6 @@ def index():
 def about():
     return render_template('about.html')
 
+@app.route('/quarterbacks')
+def quarterbacks():
+    return render_template('quarterbacks.html')
