@@ -9,6 +9,9 @@
         body {
             background-color: #000; /* Black background */
             color: #fff; /* White text */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         .navbar {
             background-color: #ba0c2f !important; /* UGA Red */
@@ -25,10 +28,30 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+            flex: 1;
+        }
+        .footer {
+            background-color: #ba0c2f; /* UGA Red */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: auto;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: normal;
+        }
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
+
 <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="#">🐶 Georgia Bulldogs</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,10 +63,10 @@
                 <a class="nav-link" href="{{ url_for('index') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('quarterbacks') }}">Quarterbacks</a>
+                <a class="nav-link" href="{{ url_for('about') }}">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                <a class="nav-link" href="{{ url_for('quarterbacks') }}">Quarterbacks</a>
             </li>
         </ul>
     </div>
@@ -52,6 +75,16 @@
 <div class="container mt-4">
     {% block content %}{% endblock %}
 </div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© {{ year }} Dawg Nation HQ | Go Dawgs! 🏈🐶</p>
+    <p>
+        <a href="{{ url_for('about') }}">About</a> |
+        <a href="{{ url_for('quarterbacks') }}">Quarterbacks</a> |
+        <a href="https://georgiadogs.com/" target="_blank">Official UGA Athletics</a>
+    </p>
+</footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
